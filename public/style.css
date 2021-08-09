@@ -1,0 +1,131 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+#root{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav{
+    background-color: #666;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+}
+
+nav a:hover{
+    color: #aaa;
+}
+
+header{
+    height: 100px;
+    background: url(https://source.unsplash.com/random/800x200) center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header h1{
+    margin: 0;
+    font-weight:500;
+    font-size: 1.5em;
+    color: #fff;
+    text-shadow: 0 0 3px #000;
+}
+
+main{
+    margin-bottom: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+section h2{
+    font-size: 1.2em;
+    margin-bottom: 0;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #666;
+    color: #fff;
+    height: 60px;
+}
+
+/* Contactページ用CSS */
+
+form{
+    width: 60%;
+    /* background-color: #eee; */
+}
+
+label{
+    display: block;
+    margin-top: 20px;
+}
+
+input[type="text"]{
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea{
+    padding: 5px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+}
+
+button{
+    margin-top: 15px;
+    padding: 5px 20px;
+}
+
+.form-error{
+    font-size: small;
+    color: red;
+}
+
+.hidden{
+    display: none;
+}
+
+/* モバイル用CSS */
+@media screen and (max-width:640px){
+    nav, footer{
+        background-color: #668;
+    }
+
+    form{
+        width: 90%;
+    }
+
+    button{
+        width: 100%;
+    }
+}
