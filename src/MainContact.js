@@ -5,7 +5,29 @@ const MainContact = () => {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        alert(`email=${data.email},body=${data.body}`);
+        // alert(`email=${data.email},body=${data.body}`);
+
+        //API連携
+        const base_url = "http://localhost:3001/inquiry";
+        fetch(base_url, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: encodeURI(`email=${data.email}&body=${data.body}`)
+        })
+            .then((response) => {
+                response.text()
+                    .then((text) => {
+                        alert(text);
+                    })
+                    .catch((error) => {
+                        alert(error.message);
+                    })
+            })
+            .catch((error) => {
+                alert(error.message);
+            })
     }
 
     return (
